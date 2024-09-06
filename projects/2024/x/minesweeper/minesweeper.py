@@ -107,8 +107,8 @@ class Sentence():
         """
         knownMines = []
         for cell in self.cells:
-            if Minesweeper.is_mine(self.cell):
-                knownMines.append(self.cell)
+            if Minesweeper.is_mine(cell):
+                knownMines.append(cell)
         return knownMines
         # raise NotImplementedError
 
