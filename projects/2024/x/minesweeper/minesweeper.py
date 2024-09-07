@@ -108,6 +108,8 @@ class Sentence():
         
         if len(self.cells) == self.count:
             return self.cells
+        else:
+            return set()
         # raise NotImplementedError
 
     def known_safes(self):
