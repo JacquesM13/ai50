@@ -106,9 +106,9 @@ class Sentence():
         Returns the set of all cells in self.cells known to be mines.
         """
         knownMines = []
-        for cell in self.cells:
-            if Minesweeper.is_mine(cell):
-                knownMines.append(cell)
+        for self.cell in self.cells:
+            if Minesweeper.is_mine(self.cell):
+                knownMines.append(self.cell)
         return knownMines
         # raise NotImplementedError
 
