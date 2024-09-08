@@ -126,8 +126,8 @@ class Sentence():
         Updates internal knowledge representation given the fact that
         a cell is known to be a mine.
         """
-        if self.cell in self.cells:
-            self.cells.remove(self.cell)
+        if cell in self.cells:
+            self.cells.remove(cell)
             self.count -= 1
         
         # raise NotImplementedError
