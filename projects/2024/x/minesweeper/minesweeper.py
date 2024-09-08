@@ -127,7 +127,7 @@ class Sentence():
         a cell is known to be a mine.
         """
         if self.cell in self.cells:
-            self.cells.remove(cell)
+            self.cells.remove(self.cell)
             self.count -= 1
         
         # raise NotImplementedError
