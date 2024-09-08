@@ -117,6 +117,8 @@ class Sentence():
         """
         if self.count == 0:
             return self.cells
+        else:
+            return set()
         # raise NotImplementedError
 
     def mark_mine(self, cell):
