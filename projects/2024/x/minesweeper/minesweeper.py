@@ -115,11 +115,8 @@ class Sentence():
         """
         Returns the set of all cells in self.cells known to be safe.
         """
-        safe_cells = ()
-        for self.cell in self.cells:
-            if Minesweeper.nearby_mines(self.cell) == 0:
-                safe_cells.append(cell)
-        return safe_cells
+        if self.count == 0:
+            return self.cells
         # raise NotImplementedError
 
     def mark_mine(self, cell):
