@@ -197,7 +197,7 @@ class MinesweeperAI():
             5) add any new sentences to the AI's knowledge base
                if they can be inferred from existing knowledge
         """
-        self.moves_made.append(cell)
+        self.moves_made.add(cell)
         self.mark_safe(cell)
         
         
