@@ -201,7 +201,7 @@ class MinesweeperAI():
         self.mark_safe(cell)
         
         
-        raise NotImplementedError
+        # raise NotImplementedError
 
     def make_safe_move(self):
         """
