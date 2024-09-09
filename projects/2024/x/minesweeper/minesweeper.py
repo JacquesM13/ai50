@@ -139,7 +139,8 @@ class Sentence():
         """
         if cell in self.cells:
             self.cells.remove(cell)
-        #raise NotImplementedError
+        
+        # raise NotImplementedError
 
 
 class MinesweeperAI():
@@ -196,6 +197,10 @@ class MinesweeperAI():
             5) add any new sentences to the AI's knowledge base
                if they can be inferred from existing knowledge
         """
+        self.moves_made.append(cell)
+        self.mark_safe(cell)
+        
+        
         raise NotImplementedError
 
     def make_safe_move(self):
