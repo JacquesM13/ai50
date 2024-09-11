@@ -228,15 +228,13 @@ class MinesweeperAI():
         # Now we have updated the knowledge base, check for known mines and safes
         
         for sentence in self.knowledge:
-            mines = sentence.known_mines()
-            if mines:
-                for cell in mines.copy():
-                    self.mark_mine(cell)
             safes = sentence.known_safes()
             if safes:
                 for cell in safes.copy():
                     self.mark_safe(cell)
+                    
         self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
+        
         
         # raise NotImplementedError
 
