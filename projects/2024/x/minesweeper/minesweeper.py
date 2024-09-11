@@ -233,7 +233,7 @@ class MinesweeperAI():
                 for cell in safes.copy():
                     self.mark_safe(cell)
                     
-        self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
+        # self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
         
         
         # raise NotImplementedError
