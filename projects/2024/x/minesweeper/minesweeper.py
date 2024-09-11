@@ -225,10 +225,6 @@ class MinesweeperAI():
         newSentence = Sentence(self.neighbours, count)
         self.knowledge.append(newSentence)
         
-        for sentence in self.knowledge:
-            if self.neighbours in sentence[0]:
-                newerSentence = Sentence((sentence[0] - self.neighbours), sentence[1] - count)
-                self.knowledge.append(newerSentence)
         
         # raise NotImplementedError
 
