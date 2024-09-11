@@ -217,6 +217,8 @@ class MinesweeperAI():
                 # If cell is in bounds
                 if 0 <= i < self.height and 0 <= j < self.width:
                     self.neighbours.add((i, j))
+        newSentence = Sentence(self.neighbours, count)
+        self.knowledge.append(newSentence)
                     
         # self.knowledge.append(f"{self.neighbours} = {count}")
         # self.kowledge.append('test')
