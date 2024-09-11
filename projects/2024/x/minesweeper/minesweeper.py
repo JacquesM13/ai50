@@ -222,7 +222,7 @@ class MinesweeperAI():
         newSentence = Sentence(self.neighbours, count)
         self.knowledge.append(newSentence)
                     
-        # self.knowledge.append(f"{self.neighbours} = {count}")
+        # self.knowledge.append(f"{self.neighbours} = {count}") 
         # self.kowledge.append('test')
         # raise NotImplementedError
 
