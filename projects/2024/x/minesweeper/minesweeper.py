@@ -219,7 +219,7 @@ class MinesweeperAI():
                     self.neighbours.add((i, j))
                     
         # self.knowledge.append(f"{self.neighbours} = {count}")
-        self.kowledge.append('test')
+        # self.kowledge.append('test')
         # raise NotImplementedError
 
     def make_safe_move(self):
