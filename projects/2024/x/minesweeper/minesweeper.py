@@ -209,7 +209,7 @@ class MinesweeperAI():
                 if (i, j) == cell:
                     continue
                 
-                if (i, j) in Sentence.known_mines():
+                if (i, j) in self.mines():
                     continue
                 
                 if (i, j) in self.safes:
