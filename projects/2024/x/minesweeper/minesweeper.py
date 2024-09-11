@@ -211,8 +211,8 @@ class MinesweeperAI():
                 if (i, j) in self.safes:
                     continue
                 
-                # if (i, j) in self.known_safes:
-                #     continue
+                if (i, j) in self.mines:
+                    continue
                 
                 # If cell is in bounds
                 if 0 <= i < self.height and 0 <= j < self.width:
