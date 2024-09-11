@@ -208,11 +208,11 @@ class MinesweeperAI():
                 # Ignore the cell itself
                 if (i, j) == cell:
                     continue
-                '''
+                
                 # If cell is in bounds
                 if 0 <= i < self.height and 0 <= j < self.width:
-                    self.knowledge.append(f"({i, j}) = {count}")
-                '''
+                    self.neighbours.add((i, j))
+                
         # raise NotImplementedError
 
     def make_safe_move(self):
