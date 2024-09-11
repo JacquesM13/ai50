@@ -211,6 +211,7 @@ class MinesweeperAI():
                 
                 # Ignore known mines
                 if (i, j) in self.mines:
+                    count -= 1
                     continue
                 
                 # Ignore known safes
