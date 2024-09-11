@@ -200,7 +200,7 @@ class MinesweeperAI():
         """
         self.moves_made.add(cell)
         self.mark_safe(cell)
-        
+        self.neighbours.clear()
         
         for i in range(cell[0] - 1, cell[0] + 2):
             for j in range(cell[1] - 1, cell[1] + 2):
@@ -210,7 +210,7 @@ class MinesweeperAI():
                     continue
                 
                 # Ignore known mines
-                if ((i, j)) in self.mines:
+                if (i, j) in self.mines:
                     continue
                 
                 # Ignore known safes
