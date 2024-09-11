@@ -232,6 +232,11 @@ class MinesweeperAI():
             if safes:
                 for cell in safes.copy():
                     self.mark_safe(cell)
+            mines = sentence.known_mines()
+            if mines:
+                for cell in mines.copy():
+                    self.mark_mine(cell)
+                    
                     
         # self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
         
