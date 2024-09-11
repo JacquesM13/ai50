@@ -200,7 +200,18 @@ class MinesweeperAI():
         self.moves_made.add(cell)
         self.mark_safe(cell)
         
+        self.neighbours = set()
         
+        for i in range(cell[0] - 1, cell[0] + 2):
+            for j in range(cell[1] - 1, cell[1] + 2):
+
+                # Ignore the cell itself
+                if (i, j) == cell:
+                    continue
+                
+                else:
+                    self.neighbours.add(cell)
+        self.knowledge.append(f"{self.neighbours} = {count}")
         # raise NotImplementedError
 
     def make_safe_move(self):
