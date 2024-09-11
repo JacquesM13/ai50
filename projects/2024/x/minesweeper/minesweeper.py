@@ -226,10 +226,10 @@ class MinesweeperAI():
         self.knowledge.append(newSentence)
         
         for sentence in self.knowledge:
-            if len(sentence) == count:
-                for cell in sentence:
-                    self.mark_mine(cell)
-
+            if self.neightbours in sentence[0]:
+                newerSentence = Sentence((sentence[0] - self.neighbours), sentence[1] - count)
+                self.knowledge.append(newerSentence)
+        
         # raise NotImplementedError
 
     def make_safe_move(self):
