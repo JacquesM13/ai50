@@ -209,9 +209,11 @@ class MinesweeperAI():
                 if (i, j) == cell:
                     continue
                 
-                if (i, j) in self.mines:
+                # Ignore known mines
+                if ((i, j)) in self.mines:
                     continue
                 
+                # Ignore known safes
                 if (i, j) in self.safes:
                     continue
                 
@@ -222,7 +224,7 @@ class MinesweeperAI():
         newSentence = Sentence(self.neighbours, count)
         self.knowledge.append(newSentence)
                     
-        # self.knowledge.append(f"{self.neighbours} = {count}") 
+        # self.knowledge.append(f"{self.neighbours} = {count}")
         # self.kowledge.append('test')
         # raise NotImplementedError
 
