@@ -208,15 +208,15 @@ class MinesweeperAI():
                 # Ignore the cell itself
                 if (i, j) == cell:
                     continue
-                if (i, j) in self.known_mines:
-                    continue
+                # if (i, j) in self.known_mines:
+                #     continue
                 
-                if (i, j) in self.known_safes:
-                    continue
+                # if (i, j) in self.known_safes:
+                #     continue
                 
                 # If cell is in bounds
-                # if 0 <= i < self.height and 0 <= j < self.width:
-                #     self.neighbours.add((i, j))
+                if 0 <= i < self.height and 0 <= j < self.width:
+                    self.neighbours.add((i, j))
                     
         #self.knowledge.append(self.neighbours)
         # raise NotImplementedError
