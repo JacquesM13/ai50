@@ -213,9 +213,7 @@ class MinesweeperAI():
                 
                 # If cell is in bounds
                 if 0 <= i < self.height and 0 <= j < self.width:
-                    self.neighbours.add(i)
-                    
-        self.knowledge.append(self.neighbours)
+                    self.knowledge.append(f"({i, j}) = {count}")
         
         # raise NotImplementedError
 
