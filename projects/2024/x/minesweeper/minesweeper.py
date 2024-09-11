@@ -213,7 +213,7 @@ class MinesweeperAI():
                 if 0 <= i < self.height and 0 <= j < self.width:
                     self.neighbours.add((i, j))
                     
-        self.knowledge.append(self.neighbours, count)
+        self.knowledge.append(f"{self.neighbours} = {count}")
         # raise NotImplementedError
 
     def make_safe_move(self):
