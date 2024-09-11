@@ -209,14 +209,14 @@ class MinesweeperAI():
                 if (i, j) == cell:
                     continue
                 
-                if (i, j) in self.mines:
+                if (i, j) in Sentence.known_mines():
                     continue
                 
                 if (i, j) in self.safes:
                     continue
                 
                 # If cell is in bounds
-                elif 0 <= i < self.height and 0 <= j < self.width:
+                if 0 <= i < self.height and 0 <= j < self.width:
                     self.neighbours.add((i, j))
                     
         newSentence = Sentence(self.neighbours, count)
