@@ -160,7 +160,7 @@ class MinesweeperAI():
         # Keep track of cells known to be safe or mines
         self.mines = set()
         self.safes = set()
-        self.neighbours = []
+        self.neighbours = set()
 
         # List of sentences about the game known to be true
         self.knowledge = []
@@ -211,9 +211,9 @@ class MinesweeperAI():
                 
                 # If cell is in bounds
                 if 0 <= i < self.height and 0 <= j < self.width:
-                    self.neighbours.append((i, j))
+                    self.neighbours.add((i, j))
                     
-        #self.knowledge.append(self.neighbours)
+        self.knowledge.append(self.neighbours, count)
         # raise NotImplementedError
 
     def make_safe_move(self):
