@@ -202,19 +202,17 @@ class MinesweeperAI():
         self.mark_safe(cell)
         
         
-        
-        
         for i in range(cell[0] - 1, cell[0] + 2):
             for j in range(cell[1] - 1, cell[1] + 2):
 
                 # Ignore the cell itself
                 if (i, j) == cell:
                     continue
-                
+                '''
                 # If cell is in bounds
                 if 0 <= i < self.height and 0 <= j < self.width:
                     self.knowledge.append(f"({i, j}) = {count}")
-        
+                '''
         # raise NotImplementedError
 
     def make_safe_move(self):
