@@ -208,8 +208,8 @@ class MinesweeperAI():
                 # Ignore the cell itself
                 if (i, j) == cell:
                     continue
-                # if (i, j) in self.known_mines:
-                #     continue
+                if (i, j) in self.known_mines:
+                    continue
                 
                 # if (i, j) in self.known_safes:
                 #     continue
