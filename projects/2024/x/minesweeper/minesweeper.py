@@ -208,15 +208,17 @@ class MinesweeperAI():
                 # Ignore the cell itself
                 if (i, j) == cell:
                     continue
-                if (i, j) in self.safes:
-                    pass
                 
                 if (i, j) in self.mines:
+                    continue
+                
+                if (i, j) in self.safes:
                     continue
                 
                 # If cell is in bounds
                 if 0 <= i < self.height and 0 <= j < self.width:
                     self.neighbours.add((i, j))
+                    
         newSentence = Sentence(self.neighbours, count)
         self.knowledge.append(newSentence)
                     
