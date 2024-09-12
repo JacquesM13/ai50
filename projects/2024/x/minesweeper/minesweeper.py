@@ -212,6 +212,7 @@ class MinesweeperAI():
                 # Ignore known mines
                 if (i, j) in self.mines:
                     count -= 1
+                    self.mark_mine(i, j)
                     continue
                 
                 # Ignore known safes
@@ -224,10 +225,6 @@ class MinesweeperAI():
                     
         
         newSentence = Sentence(self.neighbours, count)
-        
-        if len(self.neighbours) == count:
-            self.mark_mine(self.neighbours)
-        
         self.knowledge.append(newSentence)
         
         # Now we have updated the knowledge base, check for known mines and safes
