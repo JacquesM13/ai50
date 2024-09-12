@@ -238,12 +238,9 @@ class MinesweeperAI():
                     self.mark_mine(item)
                     
                     
-        
-               
-                    
         self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
 
-        
+        '''
         for sentenceSub in self.knowledge:
             for sentenceSuper in self.knowledge:
                 if sentenceSub == sentenceSuper:
@@ -256,7 +253,7 @@ class MinesweeperAI():
                         self.knowledge.append(new_sentence5)    
 
         print(self.knowledge)
-        
+        '''
         
         # raise NotImplementedError
 
