@@ -251,7 +251,7 @@ class MinesweeperAI():
                     if new_sentence5 not in self.knowledge:
                         self.knowledge.append(new_sentence5)    
 
-print(self.knowledge)
+        print(self.knowledge)
         
         
         # raise NotImplementedError
