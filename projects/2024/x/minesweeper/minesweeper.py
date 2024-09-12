@@ -240,6 +240,19 @@ class MinesweeperAI():
                     
         # self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
         
+        for sentenceSub in self.knowledge:
+            for sentenceSuper in self.knowledge:
+                if sentenceSub == sentenceSuper:
+                    self.knowledge.remove(sentenceSub)
+                elif sentenceSub is sentenceSuper:
+                    continue
+                elif sentenceSub.cells.issubset(sentenceSuper.cells):
+                    new_sentence5 = Sentence(sentenceSuper.cells.difference(sentenceSub.cells), (sentenceSuper.count-sentenceSub.count))
+                    if new_sentence5 not in self.knowledge:
+                        self.knowledge.append(new_sentence5)    
+
+print(self.knowledge)
+        
         
         # raise NotImplementedError
 
