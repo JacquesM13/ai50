@@ -236,9 +236,12 @@ class MinesweeperAI():
             if mines:
                 for cell in mines.copy():
                     self.mark_mine(cell)
+                    self.knowledge.remove(cell)
+        
                
                     
         self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
+        
         '''
         for sentenceSub in self.knowledge:
             for sentenceSuper in self.knowledge:
