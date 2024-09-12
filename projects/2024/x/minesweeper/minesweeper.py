@@ -222,7 +222,12 @@ class MinesweeperAI():
                 if 0 <= i < self.height and 0 <= j < self.width:
                     self.neighbours.add((i, j))
                     
+        
         newSentence = Sentence(self.neighbours, count)
+        
+        if len(self.neighbours) == count:
+            self.mark_mine(self.neighbours)
+        
         self.knowledge.append(newSentence)
         
         # Now we have updated the knowledge base, check for known mines and safes
