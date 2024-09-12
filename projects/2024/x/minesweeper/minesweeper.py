@@ -237,11 +237,13 @@ class MinesweeperAI():
                 for item in mines.copy():
                     self.mark_mine(item)
                     
+                    
         
                
                     
         self.knowledge = [sentence for sentence in self.knowledge if sentence != Sentence(set(), 0)]
-        
+        self.knowledge = [sentence for sentence in self.knowledge if len(sentence[0]) != sentence[1]]
+
         '''
         for sentenceSub in self.knowledge:
             for sentenceSuper in self.knowledge:
