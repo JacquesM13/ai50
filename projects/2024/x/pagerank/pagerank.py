@@ -85,7 +85,23 @@ def sample_pagerank(corpus, damping_factor, n):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    raise NotImplementedError
+    counter_dict = {}
+    
+    for key in corpus:
+        counter_dict[key] = 0
+    
+    page = random.choice(list(corpus.keys()))
+    
+    while n > 0:
+        
+        use_dict = transition_model(corpus, page, damping_factor)
+        page = random.choices(list(use_dict.keys()), list(use_dict.values()))[0]
+        counter_dict[page] += 1/n
+        n -= 1
+    
+    
+    
+    # raise NotImplementedError
 
 
 def iterate_pagerank(corpus, damping_factor):
