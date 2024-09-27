@@ -102,7 +102,7 @@ def sample_pagerank(corpus, damping_factor, n):
             
             use_dict = transition_model(corpus, page, damping_factor)
             page = random.choices(list(use_dict.keys()), list(use_dict.values()))[0]
-            counter_dict[page] += 1/1000
+            counter_dict[page] += 1/SAMPLES
             n -= 1
             
         return counter_dict
