@@ -57,22 +57,27 @@ def transition_model(corpus, page, damping_factor):
     linked to by `page`. With probability `1 - damping_factor`, choose
     a link at random chosen from all pages in the corpus.
     """
-    output_dict = {}
-    
-    for key in corpus.keys():
-        output_dict[key] = 0
+    try:
         
-    if len(corpus[page]) == 0:
+        output_dict = {}
+        
+        for key in corpus.keys():
+            output_dict[key] = 0
+            
+        if len(corpus[page]) == 0:
+            for value in corpus:
+                output_dict[value] += 1/len(corpus)
+        
+        for value in corpus[page]:
+            output_dict[value] += (damping_factor/len(corpus[page]))
+            
         for value in corpus:
-            output_dict[value] += 1/len(corpus)
-    
-    for value in corpus[page]:
-        output_dict[value] += (damping_factor/len(corpus[page]))
+            output_dict[value] += (1-damping_factor)/len(corpus)
         
-    for value in corpus:
-        output_dict[value] += (1-damping_factor)/len(corpus)
+        return output_dict
     
-    return output_dict
+    except:
+        print("An exception occurred Jacques, in the trans model")
     # raise NotImplementedError
 
 
@@ -85,21 +90,25 @@ def sample_pagerank(corpus, damping_factor, n):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    counter_dict = {}
-    
-    for key in corpus:
-        counter_dict[key] = 0
-    
-    page = random.choice(list(corpus.keys()))
-    
-    while n > 0:
+    try:
+        counter_dict = {}
         
-        use_dict = transition_model(corpus, page, damping_factor)
-        page = random.choices(list(use_dict.keys()), list(use_dict.values()))[0]
-        counter_dict[page] += 1/SAMPLES
-        n -= 1
+        for key in corpus:
+            counter_dict[key] = 0
+        
+        page = random.choice(list(corpus.keys()))
+        
+        while n > 0:
+            
+            use_dict = transition_model(corpus, page, damping_factor)
+            page = random.choices(list(use_dict.keys()), list(use_dict.values()))[0]
+            counter_dict[page] += 1/1000
+            n -= 1
+            
+        return counter_dict
     
-    
+    except:
+        print("Error in sample thing")
     
     # raise NotImplementedError
 
