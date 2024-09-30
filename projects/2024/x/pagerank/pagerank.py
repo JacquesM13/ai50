@@ -150,9 +150,9 @@ def iterate_pagerank(corpus, damping_factor):
         return_dict_copy = return_dict.copy()
         
         for page in return_dict_copy:
-            print("")
             for value in inbound_dict[page]:
-                return_dict[page] += damping_factor*(return_dict[value]/len(corpus[value]))
+                return_dict[page] = damping_factor*(return_dict_copy[value]/len(corpus[value]))
+                return_dict[page] += (1-damping_factor)/len(corpus)
             
         print(return_dict.values())
         return return_dict
