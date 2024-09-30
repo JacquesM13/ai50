@@ -127,10 +127,11 @@ def iterate_pagerank(corpus, damping_factor):
         return_dict = {}
         N = len(corpus)
         
+        inbound_dict = {}
+        
         for key in corpus:
             return_dict[key] = 1/N
             
-        inbound_dict = {}
         for page in return_dict:
             for key, value in corpus.items():
                 if page in value:
@@ -138,13 +139,20 @@ def iterate_pagerank(corpus, damping_factor):
                         inbound_dict[page].append(key)
                     else:
                         inbound_dict[page] = [key]
+                
+        for key in corpus:
+            if key not in inbound_dict:
+                inbound_dict[key] = []
+                for page in corpus.keys():
+                    inbound_dict[key].append(page)
+            
                         
         return_dict_copy = return_dict.copy()
         
         for page in return_dict_copy:
-            for values in inbound_dict[page].values():
-                for value in values:
-                    return_dict[page] += return_dict[value]/len(corpus[value])
+            print("")
+            for value in inbound_dict[page]:
+                return_dict[page] += damping_factor*(return_dict[value]/len(corpus[value]))
             
         
         return return_dict
