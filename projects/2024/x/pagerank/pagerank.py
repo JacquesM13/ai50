@@ -71,8 +71,8 @@ def transition_model(corpus, page, damping_factor):
         for value in corpus[page]:
             output_dict[value] += (damping_factor/len(corpus[page]))
             
-        for value in corpus:
-            output_dict[value] += (1-damping_factor)/len(corpus)
+        for key in corpus:
+            output_dict[key] += (1-damping_factor)/len(corpus)
         
         return output_dict
     
@@ -122,14 +122,35 @@ def iterate_pagerank(corpus, damping_factor):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
+    try:
+        
+        return_dict = {}
+        N = len(corpus)
+        
+        for key in corpus:
+            return_dict[key] = 1/N
+            
+        inbound_dict = {}
+        for page in return_dict:
+            for key, value in corpus.items():
+                if page in value:
+                    if page in inbound_dict:
+                        inbound_dict[page].append(key)
+                    else:
+                        inbound_dict[page] = [key]
+                        
+        return_dict_copy = return_dict.copy()
+        
+        for page in return_dict_copy:
+            for values in inbound_dict[page].values():
+                for value in values:
+                    return_dict[page] += return_dict[value]/len(corpus[value])
+            
+        
+        return return_dict
     
-    return_dict = {}
-    N = len(corpus)
-    
-    for key in corpus:
-        return_dict[key] = 1/N
-    
-    return return_dict
+    except:
+        print("Error in iteratem8")
     # raise NotImplementedError
 
 
