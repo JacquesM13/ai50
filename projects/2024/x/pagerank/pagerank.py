@@ -152,7 +152,7 @@ def iterate_pagerank(corpus, damping_factor):
         for page in return_dict_copy:
             print("")
             for value in inbound_dict[page]:
-                return_dict[page] += damping_factor*(return_dict[value]/len(corpus[value]))
+                return_dict[page] = damping_factor*(return_dict[value]/len(corpus[value]))
             
         
         return return_dict
