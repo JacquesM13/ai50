@@ -14,11 +14,10 @@
                     else:
                         inbound_dict[page] = [key]
                 
-        # for key in corpus:
-        #     if key not in inbound_dict:
-        #         inbound_dict[key] = []
-        #         for page in corpus.keys():
-        #             inbound_dict[key].append(page)
+        for key in corpus:
+            if len(corpus[key]) == 0:
+                for page in corpus.keys():
+                    corpus[key].add(page)
         
         notConverged = True
         
