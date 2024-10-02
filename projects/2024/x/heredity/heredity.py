@@ -140,7 +140,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone not in set` have_trait` does not have the trait.
     """
     
-    
+    print(people, one_gene, two_genes, have_trait)
     return 0.5
     # raise NotImplementedError
 
