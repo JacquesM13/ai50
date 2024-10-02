@@ -141,8 +141,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     """
     
     
-    
-    raise NotImplementedError
+    return people
+    # raise NotImplementedError
 
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
