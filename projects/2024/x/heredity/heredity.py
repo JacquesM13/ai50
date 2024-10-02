@@ -141,7 +141,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     """
     
     
-    return people
+    return 0.5
     # raise NotImplementedError
 
 
